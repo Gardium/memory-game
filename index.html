@@ -10,15 +10,22 @@
 </head>
 <body>
 
-  <div id="gameBoard">
-    
+  <div id="movement-counter">
+    <h2>Movements:</h2>
+    <p id="counter">0</p>
   </div>
 
-  <div id="gameOver">
-    <div>
-      Parabéns, você completou o jogo!
+  <div class="game-container">
+    <div id="gameBoard">
+    
     </div>
-    <button id="restart" onclick="restart()">Jogue novamente!</button>
+  
+    <div id="gameOver">
+      <div>
+        Parabéns, você completou o jogo!
+      </div>
+      <button id="restart" onclick="restart()">Jogue novamente!</button>
+    </div>
   </div>
 
   <script src="./scripts/game.js"></script>

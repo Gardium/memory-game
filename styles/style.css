@@ -7,10 +7,23 @@
 body {
   font-family: 'Righteous', cursive;
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   background: #d8dbdf;
+}
+
+#movement-counter {
+  margin-left: 10%;
+  letter-spacing: 1.25px;
+  text-align: center;
+}
+
+#counter {
+  font-size: 32px;
+}
+
+.game-container {
+ margin: auto;
 }
 
 .card {

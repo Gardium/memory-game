@@ -2,6 +2,7 @@ const FRONT = 'card-front';
 const BACK = 'card-back';
 const CARD = 'card';
 const ICON = 'icon';
+let movements = 0;
 
 
 startGame();
@@ -51,9 +52,6 @@ function createCardFace(face, card, element) {
   element.appendChild(cardElementFace);
 }
 
-
-
-
 function flipCard() {
 
   if(game.setCard(this.id)) {
@@ -62,7 +60,7 @@ function flipCard() {
     if(!game.secondCard) return;
 
     if(game.checkMatch()){
-
+      movementCounter();
       game.clearCards();
       if(game.checkGameOver()) {
         const gameOverLayer = document.getElementById('gameOver');
@@ -77,6 +75,7 @@ function flipCard() {
         firstCardView.classList.remove('flip');
         secondCardView.classList.remove('flip');
         game.unflipCards();
+        movementCounter();
       }, 1000);
     }
   }
@@ -87,4 +86,10 @@ function restart() {
   startGame();
   const gameOverLayer = document.getElementById('gameOver');
   gameOverLayer.style.display = 'none';
+}
+
+function movementCounter() {
+  const counter = document.getElementById('counter');
+  movements++;
+  counter.innerHTML = movements;
 }
