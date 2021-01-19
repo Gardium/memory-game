@@ -4,11 +4,11 @@ const CARD = 'card';
 const ICON = 'icon';
 let movements = 0;
 
-
 startGame();
 
 function startGame() {
   initializeCards(game.createCardsFromTechs());
+  loadDataFromStorage();
 }
 
 function initializeCards() {
@@ -65,6 +65,14 @@ function flipCard() {
       if(game.checkGameOver()) {
         const gameOverLayer = document.getElementById('gameOver');
         gameOverLayer.style.display = 'flex';
+
+        updateCurrent();
+
+        if(movements < (storage.best)) {
+          updateRecord();
+        }
+
+        movements = 0;
       }
     } else {
 
@@ -92,4 +100,22 @@ function movementCounter() {
   const counter = document.getElementById('counter');
   movements++;
   counter.innerHTML = movements;
+}
+
+function updateRecord() {
+  const recordElement = document.getElementById('record');
+  recordElement.innerHTML = `Best: ${movements} movements`;
+
+  storage.setRecord(movements);
+}
+
+function updateCurrent() {
+  const currentElement = document.getElementById('current');
+  currentElement.innerHTML = `Current: ${movements} movements`;
+}
+
+function loadDataFromStorage() {
+  const recordElement = document.getElementById('record');
+  const record = localStorage.getItem('data') || 0;
+  recordElement.innerHTML = `Best: ${record} movements`;
 }

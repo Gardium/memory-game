@@ -10,9 +10,16 @@
 </head>
 <body>
 
-  <div id="movement-counter">
-    <h2>Movements:</h2>
-    <p id="counter">0</p>
+  <div class="info-panel">
+    <div class="movement-counter">
+      <h2>Movements:</h2>
+      <p id="counter">0</p>
+    </div>
+    <div class="ranking-container">
+      <h2>Ranking:</h2>
+      <p id="record">Best: 0 movements</p>
+      <p id="current">Current: 0 movements</p>
+    </div>
   </div>
 
   <div class="game-container">
@@ -27,8 +34,9 @@
       <button id="restart" onclick="restart()">Jogue novamente!</button>
     </div>
   </div>
-
+  
   <script src="./scripts/game.js"></script>
+  <script src="./scripts/storage.js"></script>
   <script src="./scripts/script.js"></script>
 </body>
 </html>

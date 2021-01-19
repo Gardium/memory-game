@@ -12,14 +12,22 @@ body {
   background: #d8dbdf;
 }
 
-#movement-counter {
+.info-panel{
   margin-left: 10%;
   letter-spacing: 1.25px;
-  text-align: center;
+  text-align: center; 
 }
 
-#counter {
-  font-size: 32px;
+.info-panel h2 {
+  font-size: 28px;
+}
+
+.info-panel p {
+  font-size: 20px;
+}
+
+.movement-counter{
+  margin-bottom: 30px;
 }
 
 .game-container {
@@ -74,6 +82,8 @@ body {
   justify-content: center;
   flex-direction: column;
   top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 #restart {
